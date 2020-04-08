@@ -11,10 +11,10 @@
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 var animal = {}; // Declaring a variable called animal and assigning it to an empty object;
-animal.species = "dog"; // Using dot notation, giving the animal variable a key of species and assigning it with a string of "dog".
-animal['name'] = "Hunter"; // Using bracket notation, giving the animal variable a key of name and assigning it with a string of "Hunter".
-animal.noises = []; // Using dot notation again, giving the animal variable a key of noises and assigning it to an empty array.
-console.log(animal); // Should print the animal object to the console.
+    animal.species = "dog"; // Using dot notation, giving the animal variable a key of species and assigning it with a string of "dog".
+    animal['name'] = "Hunter"; // Using bracket notation, giving the animal variable a key of name and assigning it with a string of "Hunter".
+    animal.noises = []; // Using dot notation again, giving the animal variable a key of noises and assigning it to an empty array.
+    console.log(animal); // Should print the animal object to the console.
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ var randomIndex = getRandom(animals); // Assigning the getRandom(animals) functi
     friends.push(randomIndex.name); // Should push friends into a random index
     animals[2].friends = friends; // Using bracket notation, we will give the second variable a key of friends and assigning it to the friends variable.
     console.log(animals[2]); // Should print the second animals element to the console.
-console.log(getRandom()); // Should print a random number between 0 and the length of the animal variable to the console.
+// console.log(getRandom()); // Should print a random number between 0 and the length of the animal variable to the console.
 console.log(friends); // Should print the friends array to the console.
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
