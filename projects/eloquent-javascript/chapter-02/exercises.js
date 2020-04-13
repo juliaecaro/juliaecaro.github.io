@@ -40,10 +40,10 @@ for (var a = 0; a < size; a++){ // Declaring a for loop, with a starting conditi
 // and going up at an increment of plus 1.
   for (var b = 0; b < size; b++) { // Declaring an INNER for loop, with a starting condition of 0, a stopping condition of b being less than the value of size,
   // and going up at an increment of plus 1.
-    if ((a + b) % 2 == 0) { // An if statement; if the value of a plus b is even, this code should run
+    if ((a + b) % 2 == 0) { // An if statement; if the remainder of the value of a plus b is even, this code should run
       board += " "; // Board equals board plus " ";
     } else { // if the value of a plus b is NOT even (odd), this code should run
-      board += "#"; // Board equals board plus "#"''
+      board += "#"; // Board equals board plus "#";
     }
   } board += "\n"; // Each instance of board should have a line break after it.
 }

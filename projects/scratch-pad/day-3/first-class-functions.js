@@ -19,6 +19,7 @@ function createGreaterThanFilter(base) {
  // this one is called greaterThanFilter with a parameter of value.
     var givenValue = value;    // Declaring a variable called givenValue and assigning it
     // with the value of value, so we can call upon value later.
+    
      if (typeof bases === "string") {   // An if statement that compares the typeof the variable
      // bases to a string
        if (value > base) { // An inner if statement that compares if value is greater than base
@@ -53,6 +54,7 @@ function createLessThanFilter(base) {
  function lessThanFilter(value) { // Creating an inner function called lessThanFilter and giving it the paramter of value
     var givenValue = value;    // Declaring a variable called givenValue and assigning it with the value so we can call
     // upon it later
+    
      if (typeof bases === "string") {   // An OUTER if statement that compares the typeof bases to a string
        if (value < base) { // An INNER if statement that compares if value is LESS than base
            return true; // Should return TRUE if value is LESS than base
