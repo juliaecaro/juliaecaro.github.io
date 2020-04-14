@@ -3,13 +3,17 @@
  * 0. To control the flow of code, especially the order in which conditional statements are compared,
  * we can use if statements, else-if statements, and if-else-if chains. The conditional statements
  * within these chains can be any BOOLEAN value (true or false), or any boolean EXPRESSION. The code
- * wrapped within the curly braces {} runs ONLY if a conditional statement is true. NOTE: the rest of 
- * the code does NOT run if a conditional statement turns out to be true, and the code reads from top
- * to bottom.
+ * wrapped within the curly braces {} runs ONLY if a conditional statement is true. Only ONE conditional
+ * statement can execute per conditional chain, and ONLY if it is TRUE. NOTE: the rest of the code does 
+ * NOT run if a conditional statement turns out to be true, and the code reads from top to bottom. NOTE:
+ * You would use an if-else-if chain over a switch statement when you want to test for the truthiness of
+ * an expression, if you only have a single test, or you need to evaluate different expressions for each
+ * branch of the chain.
  *
  * 1.To create an if statement, we use the keyword, if, followed by a pair of parenthesis and in those 
  * parenthesis goes the conditional statement. To the right of the parenthesis goes a curly brace {}, 
- * and within the curly braces goes the code that will run should the conditional statement be true.
+ * and within the curly braces goes the code that will run should the conditional statement be true. 
+ * There can be ONE if statement at the beginning of an if-else-if chain.
  *
  * 2. To create an else-if statement, we use the keyword, else-if, just behind the closing curly brace of
  * the if statement, and the else-if keyword is followed by a pair of parenthesis. In those parenthesis 
@@ -20,7 +24,8 @@
  * 3. To create an else statement, we use the keyword, else, behind the final curly brace of the last else-if 
  * statement. The only thing that follows the else statement is another pair of curly braces {}. NOTE: There 
  * is NO conditional statement to check for, so the else statement is the default! That means that the code 
- * within the else statement's curly braces will ONLY run if all other conditional statements are false.
+ * within the else statement's curly braces will ONLY run if all other conditional statements are false. There
+ * can be ONE else statement at the end of an if-else-if chain.
  *
  * 4. To create a switch statement, we use the keyword, switch, followed by a pair of parenthesis. Inside the
  * parenthesis, we put the EXPRESSION. Next to the parenthesis, we put curly braces {}. Inside the curly braces
@@ -28,7 +33,10 @@
  * console.log() pairing are separated by a break statement. The final element within the curly braces is the 
  * default statement and the final console.log() statement. Finally, we use switch statements to evaluate an 
  * expression's value against a case CLAUSE. The switch statement will then execute statements based on whether
- * the value of the variable matches a specific case (true!) or not (false). 
+ * the value of the variable matches a specific case (true!) or not (false). NOTE: You would use a switch
+ * statement over an if-else-if chain to make the code easier to read, when you are comparing multiple possible 
+ * conditions of an expression (and the expression itself is non-trivial), when you have multiple values that 
+ * require the same code, or when you have some values that require all of another value's execution.
  */
  
 // 1. if statement //

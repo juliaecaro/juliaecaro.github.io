@@ -168,11 +168,23 @@ myFirstNull; // This should print null to the console!
 // that is impossible to represent. The type of NaN is a number, and NaN is a property of the global object. It is 
 // returned when math fails or when a function trying to parse a number fails.
 
+var myFirstNaN = 'word' - 30; // Declaring a variable called myFirstNaN and assigning it to the value of a string of 
+// 'word' minus 30.
+console.log(myFirstNaN); // Should print NaN to the console.
+
 // 10. Simple Data Types - Infinity & -Infinity // 
 
 // Infinity and -Infinity are PRIMITIVE data types, a symbolic, numerical data type that represents the concept of 
 // infinity and negative infinity, respectively. They are displayed when a number exceeds the upper or lower 
 // (respectively) limit of the floating point numbers.
+
+var myFirstInfinity = 1 / 0; // Declaring a variable called myFirstInfinity and assigning it to the value of 1
+// divided by 0.
+console.log(myFirstInfinity); // Should print Infinity to the console.
+
+var myFirstNegativeInfinity = -2 / 0; // Declaring a variable called myFirstNegativeInfinity and assigning it to the 
+// value of negative 2 divided by 0.
+console.log(myFirstNegativeInfinity); // Should print -Infinity to the console.
 
 // 11. The Difference Between Primitive/Simple and Complex Data Types //
 

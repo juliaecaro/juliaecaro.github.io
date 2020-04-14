@@ -8,17 +8,30 @@
  *
  * 1. Arithmetic Operators are used to perform mathematical operations/problems
  * between numeric operands. These are the usual operators we may be familiar
- * with from math class: +, -, *, /, %, ++, and --.
+ * with from math class: +, -, *, /, %, ++, and --. The + sign performs addition,
+ * the - sign performs subtraction, the * sign performs multiplication, the /
+ * sign performs division, the % sign returns the division remainder, the ++ sign
+ * is an increment, and the -- sign is a decrement. NOTE: also from math class, 
+ * we can use the PEMDAS acronym for figuring out the order of operations for the
+ * assignment operators: parenthesis, exponents, multiplication, division, 
+ * addition, and subtraction.
  *
  * 2. Comparison operators are used to compare two operands and return a BOOLEAN
  * value, true or false. Here  are the comparison operators: >, <, >=, <=, ===, 
- * and ==.
+ * and ==. NOTE: the == operator compares only the value of the operands being
+ * compared, while the === operator compares value AND type of the operands being 
+ * compared.
  *
  * 3. Assignment operators are used to assign values to variables with shorthand.
  * Here are the assignment operators: =, +=, -=, *=, /=, and %=. 
  *
  * 4. Logical operators are used to combine two or more conditions into one 
- * statement. Here are the logical operators: &&, ||, and !. 
+ * statement. Here are the logical operators: &&, ||, and !. The && operator
+ * compares BOTH conditions to make sure BOTH conditions are true or false. The ||
+ * operator compares BOTH conditions, but will run the code if only ONE of them 
+ * (either OR) is true. NOTE: this operator (||) will still return false if both
+ * conditions are false. The ! operator will convert a value to a Boolean and return
+ * the opposite Boolean value.
  *
  * 5. Unary operators are operators that take ONE operand and perform an action. 
  * The unary operators we will be looking at are: !, typeOf, and -.
@@ -28,6 +41,12 @@
  * an expression to perform if the condition is FALSY. The two expressions are
  * separated by a colon. NOTE: This is the ONLY operator that takes THREE OPERANDS!
  * It's commonly used as a form of shorthand for an if statement!
+ *
+ * 7. Here is the order of operations for the operators, from highest to lowest 
+ * precedence: grouping (()), not (!), multiplication (*), division (/), modulus (%),
+ * addition (+), subtraction (-), less than (<), less than or equal to (<=), greater 
+ * than (>), greater than or equal to (>=), equal to (=), not equal to (!=), strict 
+ * equal to (===), strictly not equal to (!==), and (&&), or (||), and assignment (=).
  */
  
  // 1. Arithmetic Operators //

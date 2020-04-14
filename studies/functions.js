@@ -18,18 +18,22 @@
  
  // 1. declaration //
  
- function myFirstFunction() { // Declaring a function called myFirstFunction.
- }
+ function myFirstFunction(param1, param2) { // Declaring a function called myFirstFunction.
+// and giving it the PARAMETERS param1 and param2 in parenthesis. Next is a curly brace!
+    return param1 + param2; // The OPTIONAL return statement 
+ } // The final curly brace to close the function body!
  
  console.log(myFirstFunction); // Should print [Function: myFirstFunction] to the console.
  
 // 2. initialization or assignment //
 
- function myFirstFunction(param1, param2) { // Declaring a function named myFirstFunction
- // and giving it the PARAMETERS param1 and param2 in parenthesis. Next is a curly brace!
-     return param1 + param2; // The OPTIONAL return statement 
- } // The final curly brace to close the function body!
- 
+var isBackwards = function(value) { // Declaring an anonymous function with the keyword 
+// function and a parameter of value, assigned to a new variable called isBackwards. 
+  return !value; // Should return the opposite boolean value of the input value.
+};
+
+console.log(isBackwards(true)); // Should print false to the console.
+
  // 3. invocation or calling the function //
  
  myFirstFunction(1, 2); // CALLING the function myFirstFunction and FINALLY giving it some
@@ -56,7 +60,7 @@
 
 // 6. Assigning functions to variables //
 
-var addition = function addFunc(param1, param2) { // Assigning the function addFunc to a variable
+var addition = function(param1, param2) { // Assigning the function addFunc to a variable
 // called addition. We can then use the variable addition later and change it. NOTE: You can change
 // the variable the function is called to, but not the function name itself! The function name can
 // ONLY be used within the function body!
@@ -70,6 +74,13 @@ var addition = function addFunc(param1, param2) { // Assigning the function addF
 // and assigning it with arguments, as we did before. We specify OUTPUTS by giving
 // anonymous parameters in the function name's parenthesis, and having a return 
 // statement within the function body!
+
+function printHello() { // Declaring a new function called printHello and not 
+// giving it any parameters. 
+    'Hello' + 'How are you?'; // Should concatenate 'Hello' with 'How are you?'
+}
+
+console.log(printHello); // Prints [Function: printHello] to the console.
 
 // 8. Scope //
 

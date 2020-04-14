@@ -55,9 +55,9 @@ function firstFunction() { // Declaring a function called firstFunction and assi
  */
  
 // 5. Let - Block Scope //
-// Let is surrounded by curly braces, {}, or block scoped. Variables declared within these curly braces with let can
-// ONLY be used within those specific curly braces. They can be used to reassign a variable within the scope, but 
-// NOT redeclared. They are NOT initialized.
+// Let is not surrounded by curly braces, {}, but it IS block scoped. Variables declared within these curly braces 
+// with let can ONLY be used within those specific curly braces. They can be used to reassign a variable within the 
+// scope, but NOT redeclared. They CAN be initialized.
 
 var y = 5; { // Declaring a variable called y and assigning it with the value of 5 OUTSIDE the curly braces. 
     let y = 0; // Though y is assigned the value of 5 OUTSIDE the curly braces, {}, y has a value of 0 INSIDE the 
@@ -68,8 +68,8 @@ var y = 5; { // Declaring a variable called y and assigning it with the value of
 }
 
 // 6. Const //
-// Like let, const is surrounded by curly braces, {}, or block scoped. The variable CANT be reassigned or redeclared.
-// They are NOT initialized, and MUST be initialized during the initial declaration.
+// Const is surrounded by curly braces, {}, and block scoped. The variable CAN'T be reassigned or redeclared.
+// They MUST be initialized during the initial declaration.
 
 var variableName2; { // An example of const being block scoped. 
     const variableName2 = 5; // Initializing the variable during the inital declaration.

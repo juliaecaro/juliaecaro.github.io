@@ -81,7 +81,7 @@
  
  var myFirstArray = ['1', '2', '3', '4', '5']; // Declaring a variable and assigning it an array with five values.
  
- for (var i = myFirstArray.length; i >= 0; i--) { // Declaring a for loop and assigning it with the starting condition of 
+ for (var i = myFirstArray.length - 1; i >= 0; i--) { // Declaring a for loop and assigning it with the starting condition of 
  // i = the length of myFirstArray, the stopping condition of i being greater than or equal to 0, and the increment of minus 1.
      console.log(myFirstArray[i]); // Should print the values of the myFirstArray index BACKWARDS during each loop.
  }
@@ -91,8 +91,6 @@
  var myFirstObject = {key1: 'a', key2: 'b', key3: 'c'}; // Declaring a variable and assigning it an object with three key/value pairs.
  
  for (var key in myFirstObject) { // Declaring a for-in loop and assigning it with the name of myFirstObject
-   if (myFirstObject.hasOwnProperty(key)) { // An inner if statement, checking to see if myFirstObject has a property of the keys
     console.log(key + " " + myFirstObject[key]); // Should print the key name, a space, and then the key VALUE of each key/value pair 
     // in the console.
-   }
  }
