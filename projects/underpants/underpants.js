@@ -257,6 +257,19 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    var myNewArray = []; // Declaring a new array called myNewArray and assigning it to an empty array.
+    
+    for (var i = 0; i <= array.length - 1; i++){ // Declaring a new for loop; starting condition is i 
+    // equals 0, stopping condition is i is less than or equal to the length of array minus 1, and the
+    // increment is plus 1.
+        if(_.indexOf(array, array[i]) === i) { // If statement; if the indexOf array value as array and 
+        // array[i] as the value is strictly equal to index of i, this code should run
+            myNewArray.push(array[i]); // Push the index of array into myNewArray
+        }
+    }
+    return myNewArray; // Return myNewArray
+};
 
 /** _.filter
 * Arguments:
@@ -274,6 +287,19 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func) {
+    var myNewestArray = []; // Declaring a new variable called myNewestArray and assigning it to
+    // an empty array
+        
+    for (var i = 0; i <= array.length - 1; i++) { // For loop; starting condition is i is equal to 0,
+    // stopping condition is i is less than or equal to the length of array minus 1, and the increment
+    // is plus 1
+        if(func(array[i], i, array) === true) { // If statement; if the function call for each element in
+        // array equals true, run this code
+            myNewestArray.push(array[i]); // Push the index of array into myNewestArray
+    }
+   } return myNewestArray; // Return myNewestArray
+};
 
 /** _.reject
 * Arguments:
@@ -288,6 +314,19 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, func) {
+    var myFourthArray = []; // Declaring a new variable called myFourthArray and assigning it to an
+    // empty array
+    
+    for (var i = 0; i <= array.length - 1; i++) { // Declaring a for loop; starting condition is i
+    // equals 0, the stopping condition is i is less than or equal to the length of array minus 1,
+    // and the increment is plus 1
+        if(func(array[i], i, array) !== true) { // If statement; if the function call for each element in
+        // array does NOT equal true, run this code
+            myFourthArray.push(array[i]); // Push the index of array into myFourthArray
+        }
+    } return myFourthArray; // Return myFourthArray
+};
 
 /** _.partition
 * Arguments:
@@ -308,6 +347,29 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 }
 */
 
+_.partition = function(array, func) {
+    let arr1 = []; // Declaring a new array called arr1 and assigning it
+    // to an empty array
+    let arr2 = []; // Declaring a new array called arr2 and assigning it
+    // to an empty array
+    let arr3 = []; // Declaring a new array called arr3 and assigning it
+    // to an empty array
+    
+    for (let i = 0; i < array.length; i++) { // For loop; starting condition
+    // is i equals 0, stopping condition is i is less than the length of array,
+    // and the increment is plus 1
+        if (func(array[i], i, array) === true) { // If statement; if the function 
+        // call for each element in the array does equal true, run this code
+            arr1.push(array[i]); // Push the index of array into arr1
+        } else if (func(array[i], i, array) === false) { // Else if statement; if 
+        // the function call for each element in the array equals false, run this 
+        // code
+            arr2.push(array[i]); // Push the index of array into arr2
+        }
+    } arr3.push(arr1); // Push arr1 into arr3
+    arr3.push(arr2); // Push arr2 into arr3
+    return arr3; // Return arr3
+};
 
 /** _.map
 * Arguments:
@@ -325,6 +387,29 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func) {
+    var arr4 = []; // Declaring a new variable called arr4 and assigning it
+    // to the value of an empty array
+    
+    if (Array.isArray(collection) === true) { // If collection is an array equals
+    // true, this code will run
+        for (let i = 0; i < collection.length; i++) { // For loop; the starting
+        // condition is i equals 0, the stopping condition is i is less than 
+        // the length of collection, and the increment is plus 1
+            let fun = func(collection[i], i, collection); // Declaring a new
+            // variable called fun and assigning it to the value of the function
+            // call for each element in the collection
+            arr4.push(fun); // Push the fun variable into arr4
+        }
+    } else { // Else statement; default, needs no conditional
+        for (let key in collection) { // For-in loop; let key in collection
+           let fun = func(collection[key], key, collection); // Declaring a new
+            // variable called fun and assigning it to the value of the function
+            // call for each element in the collection
+           arr4.push(fun); // Push the fun variable into arr4
+        }
+    } return arr4; // Return arr4
+};
 
 /** _.pluck
 * Arguments:
@@ -337,6 +422,13 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(array, property) {  
+    return _.map(array, function(element) { // Should return the .map function, with the 
+    // input array and the function as arguments. The function argument has the element 
+    // as input
+        return element[property]; // Return the property of each element in the array
+    });
+};
 
 /** _.every
 * Arguments:
@@ -359,6 +451,36 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func) {
+    
+    if (func === undefined) { // If statement; If func is strictly equal to undefined, this code should run
+        for (var i = 0; i < collection.length; i++) { // For loop; starting condition is i equals 0, 
+        // stopping condition is i is less than the length of collection, and the increment is plus 1.
+            if (collection[i] === false) { // If statement; if any element of collection is strictly
+            // equal to false, run this code
+                return false; // Return false
+            } 
+        } return true; // Else return true.
+    } else if (Array.isArray(collection) === true) { // Else if statement; if collection is an array, this 
+    // code will run
+        for (var i = 0; i < collection.length; i++) { // For loop; starting condition is i = 0, 
+        // the stopping condition is i is less than the length of collection, and the
+        // increment is plus 1.
+            if (func(collection[i], i, collection) === false)  // If statement; calling the func 
+            // function; collection[i] is the element we are modifiying, the i is the index, and 
+            // collection is the list. If func is strictly equal to false, this code will run
+                return false; // Return false
+        } return true; // Return true
+    } else { // Else statement; default, needs no conditional
+        for (var key in collection) { // For-in loop; run this code if the collection is an object
+            if (func(collection[key], key, collection) === false) { // If statement; calling the func 
+            // function; collection[key] is the value, key is the key, and collection is the list. If
+            // func is strictly equal to false, this code will run
+                return false; // return false
+        }
+} return true; // Return true.
+}
+};
 
 /** _.some
 * Arguments:
@@ -381,6 +503,35 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collection, func) {
+    if (func === undefined) { // If statement; If func is strictly equal to undefined, this code should run
+        for (var i = 0; i < collection.length; i++) { // For loop; starting condition is i equals 0, 
+        // stopping condition is i is less than the length of collection, and the increment is plus 1.
+            if (collection[i] === true) { // If statement; if any element of collection is strictly
+            // equal to true, run this code
+                return true; // Return true.
+            } 
+        } return false; // Else return false.
+    } else if (Array.isArray(collection) === true) { // Else if statement; if collection is an array, this 
+    // code will run
+        for (var i = 0; i < collection.length; i++) { // For loop; starting condition is i = 0, 
+        // the stopping condition is i is less than the length of collection, and the
+        // increment is plus 1.
+            if (func(collection[i], i, collection) === true)  // If statement; calling the func 
+            // function; collection[i] is the element we are modifiying, the i is the index, and 
+            // collection is the list. If func is strictly equal to true, this code will run
+                return true; // Return true
+        } return false; // Return false
+    } else { // Else statement; default, needs no conditional
+        for (var key in collection) { // For-in loop; run this code if the collection is an object
+            if (func(collection[key], key, collection) === true) { // If statement; calling the func 
+            // function; collection[key] is the value, key is the key, and collection is the list. If
+            // func is strictly equal to true, this code will run
+                return true; // return true
+        }
+} return false; // Return false.
+}
+};
 
 /** _.reduce
 * Arguments:
@@ -401,6 +552,26 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    var previousResult = seed; // Declaring a new variable called previousResult and assigning it to seed
+    
+    if (previousResult === undefined) { // If statement; if previousResult is strictly equal to undefined, 
+    // this code should run
+        previousResult = array[0]; // Assigning previousResult to equal the first element of collection as seed 
+        
+        for (var i = 1; i < array.length; i++) { // For loop; starting condition is i equals 1 (to go to the
+        // next element), stopping condition is i is less than the length of array, and the increment is plus 1.
+            previousResult = func(previousResult, array[i], i); // Assigning previousResult to equal the function 
+            // call on previousResult, the element, and the index
+    } 
+    } else { // Else statement; default, needs no conditional
+        for (var i = 0; i < array.length; i++) { // For loop; starting condition is i equals 0, stopping condition
+        // is i is less than the length of array, and the increment is plus 1.
+            previousResult = func(previousResult, array[i], i); // Assigning previousResult to equal the function 
+            // call on previousResult, the element, and the index
+        }
+    } return previousResult; // Return previousResult
+};
 
 /** _.extend
 * Arguments:
@@ -416,6 +587,12 @@ _.each = function(collection, func) { // Calling the _ array and giving it the f
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(object1, object2, ...object) { 
+    Object.assign(object1, object2, ...object); // Using the Object.assign method to copy all properties from
+    // the source objects to the target object (object1).
+    return object1; // Should return object1.
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
